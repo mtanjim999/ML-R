@@ -60,5 +60,28 @@ ggplot(gapminder, aes(continent, lifeExp))+
   geom_jitter(alpha = .2)+
   geom_violin(draw_quantiles = c(.25, .5, .75))
 
+#facet
+ggplot(gapminder, aes(lifeExp, gdpercap))+
+  geom_point() +
+  facet_grid(.~continent)
+#facet_warp()
+
+#coordinate flip
+ggplot(gapminder, aes(continent, lifeExp))+
+  geom_boxplot()+
+  coord_flip()
+# theme change
+ggplot(gapminder, aes(continent, lifeExp, fill = continent))+
+  geom_boxplot()+
+  theme_bw()+
+  theme_classic()+
+  theme_dark()
+
+
+
+
+
+
   
+
 
